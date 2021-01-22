@@ -6,6 +6,7 @@ package lc_1;
  * @description:
  * 1.两数之和
  * Tips：数组，哈希表
+ * 暴力做法
  */
 public class Solution {
     public int[] twoSum(int[] nums, int target) {
