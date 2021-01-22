@@ -4,7 +4,7 @@ package lc_2;
  * @author: Miguel
  * @date: 2020/11/23 12:02 上午
  * @description:
- * 2.两数相加
+ * 2.两数相加-链表
  * Tips：链表
  */
 
