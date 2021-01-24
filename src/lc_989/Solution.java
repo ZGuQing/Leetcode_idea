@@ -13,7 +13,7 @@ import static java.util.Collections.*;
  * @author: Miguel
  * @date: 2021/1/22 7:56 下午
  * @description:
- * 将k转为数组
+ * 将数字k存到数组中，用数组模拟两个数的加法
  */
 public class Solution {
     @Test
