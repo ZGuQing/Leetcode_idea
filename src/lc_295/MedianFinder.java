@@ -9,21 +9,31 @@ import java.util.PriorityQueue;
  */
 public class MedianFinder {
     int count;
+    int maxsize, minsize;
     PriorityQueue<Integer> maxheap;
     PriorityQueue<Integer> minheap;
     /** initialize your data structure here. */
     public MedianFinder() {
-        count = 0;
+        count = 0; maxsize = 0; minsize = 0;
         maxheap = new PriorityQueue<>((x, y) -> y - x);
         minheap = new PriorityQueue<>();
     }
-
     public void addNum(int num) {
         count += 1;
-        maxheap.offer(num);
-        minheap.add(maxheap.poll());
-        // 如果两个堆合起来的元素个数是奇数，小顶堆要拿出堆顶元素给大顶堆
-        if((count & 1) != 0) maxheap.add(minheap.poll());
+        if(maxheap.isEmpty() || num <= maxheap.peek()) {
+            maxheap.add(num);
+            maxsize ++;
+        } else {
+            minheap.add(num);
+            minsize ++;
+        }
+        if(maxsize > minsize + 1) { //大根堆数量比小根堆数量多2个
+            minheap.add(maxheap.poll());
+            maxsize --; minsize ++;
+        } else if(minsize > maxsize) { //小根堆数量比大根堆多一个
+            maxheap.add(minheap.poll());
+            maxsize ++; minsize --;
+        }
     }
 
     public double findMedian() {
