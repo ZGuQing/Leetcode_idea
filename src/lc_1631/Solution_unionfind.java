@@ -9,6 +9,7 @@ import java.util.*;
  */
 public class Solution_unionfind {
     public int minimumEffortPath(int[][] heights) {
+        Scanner scanner = new Scanner(System.in);
         int m = heights.length;
         int n = heights[0].length;
         List<int[]> edges = new ArrayList<>();
