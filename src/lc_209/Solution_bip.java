@@ -20,13 +20,13 @@ public class Solution_bip {
         for(int i = 0; i < n; i ++ ) {
             sumN += nums[i];
         }
-        if(sumN < target) return 0;
+        if(sumN < target) return 0; //数组和小于给定值，直接返回0
         while(right < n) {
-            while(right < n && sum < target) {
+            while(right < n && sum < target) { //右边界向右扩展
                 sum += nums[right];
                 right ++;
             }
-            while(left < n && sum >= target) {
+            while(left < n && sum >= target) {//左边界向右收缩
                 sum -= nums[left];
                 left ++;
             }
